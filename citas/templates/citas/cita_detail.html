@@ -1,0 +1,13 @@
+{% extends 'citas/base.html' %}
+
+{% block content %}
+<h2>Detalle de Cita</h2>
+<p><strong>Mascota:</strong> {{ cita.mascota.nombre }}</p>
+<p><strong>Fecha:</strong> {{ cita.fecha }}</p>
+<p><strong>Hora:</strong> {{ cita.hora }}</p>
+<p><strong>Tipo:</strong> {{ cita.tipo_cita }}</p>
+<p><strong>Descripción:</strong> {{ cita.descripcion }}</p>
+<p><strong>Estado:</strong> {{ cita.estado }}</p>
+
+<a href="{% url 'cita_list' %}">Volver</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'citas/base.html' %}
+
+{% block content %}
+<h2>Lista de Mascotas</h2>
+<a href="{% url 'mascota_create' %}">Nueva mascota</a>
+<ul>
+    {% for mascota in mascotas %}
+        <li>
+            {{ mascota.nombre }} - {{ mascota.especie }}
+            <a href="{% url 'mascota_detail' mascota.pk %}">Ver</a>
+            <a href="{% url 'mascota_update' mascota.pk %}">Editar</a>
+            <a href="{% url 'mascota_delete' mascota.pk %}">Eliminar</a>
+        </li>
+    {% empty %}
+        <li>No hay mascotas registradas.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'citas/base.html' %}
+
+{% block content %}
+<h2>Formulario de Mascota</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+<a href="{% url 'mascota_list' %}">Cancelar</a>
+{% endblock %}

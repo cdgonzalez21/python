@@ -1,0 +1,13 @@
+{% extends 'citas/base.html' %}
+
+{% block content %}
+<h2>Eliminar Mascota</h2>
+<p>¿Deseas eliminar a "{{ object.nombre }}"?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+</form>
+
+<a href="{% url 'mascota_list' %}">Cancelar</a>
+{% endblock %}

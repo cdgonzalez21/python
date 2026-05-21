@@ -1,0 +1,18 @@
+{% extends 'citas/base.html' %}
+
+{% block content %}
+<h2>Lista de Citas</h2>
+<a href="{% url 'cita_create' %}">Nueva cita</a>
+<ul>
+    {% for cita in citas %}
+        <li>
+            {{ cita.mascota.nombre }} - {{ cita.tipo_cita }} - {{ cita.fecha }}
+            <a href="{% url 'cita_detail' cita.pk %}">Ver</a>
+            <a href="{% url 'cita_update' cita.pk %}">Editar</a>
+            <a href="{% url 'cita_delete' cita.pk %}">Eliminar</a>
+        </li>
+    {% empty %}
+        <li>No hay citas registradas.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
